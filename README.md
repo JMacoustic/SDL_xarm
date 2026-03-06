@@ -1,4 +1,4 @@
-# sdl_ws
+# SDL_xarm
 
 ROS2 workspace for xArm7 motion experiments.
 
