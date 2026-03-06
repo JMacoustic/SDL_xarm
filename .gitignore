@@ -1,0 +1,6 @@
+build/
+install/
+log/
+src/sdlenv/
+**/__pycache__/
+*.pyc
