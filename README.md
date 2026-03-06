@@ -39,7 +39,7 @@ EOF
 
 ```bash
 cd sdl_ws
-source /opt/ros/humble/setup.bash
+source /opt/ros/$ROSDISTRO/setup.bash
 colcon build --symlink-install
 source install/setup.bash
 ```
