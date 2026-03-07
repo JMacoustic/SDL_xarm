@@ -25,6 +25,7 @@ setup(
             'circle_motion = testapp.circle_motion:main',
             'robot_connection_test = testapp.robot_connection_test:main',
             'pick_and_place = testapp.pick_and_place:main',
+            'aruco_pick_and_place = testapp.aruco_pick_and_place:main',
         ],
     },
 )
