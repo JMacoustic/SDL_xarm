@@ -136,7 +136,8 @@ class MainWindow(QMainWindow):
         params     = aruco.DetectorParameters()
         self.detector = aruco.ArucoDetector(dictionary=aruco_dict, detectorParams=params)
 
-        self.cap = cv2.VideoCapture(camera.index, cv2.CAP_DSHOW)
+        self.cap = cv2.VideoCapture(camera.index, cv2.CAP_V4L2)
+        self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
         if not self.cap.isOpened():
             self.cap = cv2.VideoCapture(camera.index)
 

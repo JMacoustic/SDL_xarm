@@ -257,7 +257,10 @@ class _CameraWorker(QThread):
         self._running = False
 
     def run(self) -> None:
-        cap = cv2.VideoCapture(CAMERA_INDEX)
+        cap = cv2.VideoCapture(CAMERA_INDEX, cv2.CAP_V4L2)
+        cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
+        if not cap.isOpened():
+            cap = cv2.VideoCapture(CAMERA_INDEX)
         if not cap.isOpened():
             self._shared.set_status(f'ERROR: cannot open camera {CAMERA_INDEX}')
             return
